@@ -1,19 +1,43 @@
 # Calculo de Descontos OCP
 
-## Project Overview
-This project implements a discount calculation system following the Open-Closed Principle (OCP). The principle states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. This ensures that you can add new functionality without changing existing code, thereby reducing the risk of introducing bugs.
+## Descrição
+Este projeto é uma implementação que calcula descontos de acordo com as regras definidas. O objetivo é simplificar o processo de cálculo e proporcionar uma ferramenta útil para o usuário final.
 
-## Features
-- Calculation of various discount strategies.
-- Easily extendable by adding new discount types without modifying existing code.
+## Funcionalidades
+- Cálculo de diferentes tipos de desconto.
+- Interface amigável.
+- Suporte a múltiplos idiomas.
 
-## How it Works
-1. **Discount Interface**: An interface defines a method for calculating discounts.
-2. **Concrete Discounts**: Each discount type (e.g., seasonal, promotional) implements the discount interface.
-3. **Calculator**: The calculator applies the appropriate discount based on the input criteria.
+## Estrutura do Projeto
+- `src/`: Contém o código fonte do projeto.
+- `tests/`: Contém os testes automatizados.
+- `docs/`: Documentação do projeto.
 
-## Getting Started
-To get started with the project, clone the repository and run the provided examples to see how discounts are calculated based on different criteria.
+## Como Usar
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/andrMiotto/Calculo-de-Descontos-OCP.git
+   ```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd Calculo-de-Descontos-OCP
+   ```
+3. Execute o projeto:
+   ```bash
+   # Comando para executar o projeto
+   ```
 
-## Contributing
-Contributions are welcome! Please fork the repository and create a pull request for any enhancements or bug fixes.
+## Contribuição
+Contribuições são bem-vindas! Por favor, siga este fluxo:
+1. Fork o projeto
+2. Crie uma nova branch (`git checkout -b feature/NovaFuncionalidade`)
+3. Faça suas alterações e commit (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Faça um push para a branch (`git push origin feature/NovaFuncionalidade`)
+5. Abra um Pull Request
+
+## Licença
+Este projeto está sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## Contato
+Para mais informações, entre em contato:
+- [Seu Nome](mailto:seuemail@exemplo.com)
