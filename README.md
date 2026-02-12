@@ -1,43 +1,13 @@
-# Calculo de Descontos OCP
+A atividade consistiu em refatorar o código original para atender ao Princípio Aberto-Fechado (OCP), que determina que uma classe deve estar aberta para extensão, mas fechada para modificação.
 
-## Descrição
-Este projeto é uma implementação que calcula descontos de acordo com as regras definidas. O objetivo é simplificar o processo de cálculo e proporcionar uma ferramenta útil para o usuário final.
+No código inicial, a classe CalculadoraDeDesconto utilizava estruturas condicionais (if/else) para aplicar diferentes tipos de desconto. Isso obrigava a modificação da classe sempre que um novo tipo de desconto fosse criado, caracterizando uma violação do OCP.
 
-## Funcionalidades
-- Cálculo de diferentes tipos de desconto.
-- Interface amigável.
-- Suporte a múltiplos idiomas.
+Para resolver o problema, aplicamos o padrão de projeto Strategy, criando a interface EstrategiaDeDesconto, que define o contrato para o cálculo de desconto.
 
-## Estrutura do Projeto
-- `src/`: Contém o código fonte do projeto.
-- `tests/`: Contém os testes automatizados.
-- `docs/`: Documentação do projeto.
+Cada tipo de desconto (Cupom, VIP, Sazonal e Aniversário) foi implementado em uma classe concreta no pacote service, todas implementando a interface EstrategiaDeDesconto. Dessa forma, cada regra de negócio ficou encapsulada em sua própria classe, reduzindo o acoplamento e aumentando a flexibilidade do sistema.
 
-## Como Usar
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/andrMiotto/Calculo-de-Descontos-OCP.git
-   ```
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd Calculo-de-Descontos-OCP
-   ```
-3. Execute o projeto:
-   ```bash
-   # Comando para executar o projeto
-   ```
+A classe CalculadoraDeDesconto foi refatorada para receber uma estratégia como parâmetro, eliminando completamente as estruturas condicionais internas.
 
-## Contribuição
-Contribuições são bem-vindas! Por favor, siga este fluxo:
-1. Fork o projeto
-2. Crie uma nova branch (`git checkout -b feature/NovaFuncionalidade`)
-3. Faça suas alterações e commit (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Faça um push para a branch (`git push origin feature/NovaFuncionalidade`)
-5. Abra um Pull Request
+Na classe principal (main), criamos o objeto Pedido, instanciamos a calculadora e definimos dinamicamente a estratégia de desconto desejada. Em seguida, aplicamos o desconto e armazenamos o resultado na variável valorFinal.
 
-## Licença
-Este projeto está sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## Contato
-Para mais informações, entre em contato:
-- [Seu Nome](mailto:seuemail@exemplo.com)
+Com essa abordagem, o sistema agora permite adicionar novos tipos de desconto apenas criando novas classes que implementem a interface, sem necessidade de alterar a classe CalculadoraDeDesconto, garantindo assim conformidade com o OCP.
